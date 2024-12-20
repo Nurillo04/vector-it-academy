@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin/admin.component';
-import { StudentsComponent } from './students/students/students.component';
-import { MentorComponent } from './mentor/mentor/mentor.component';
+
+import { AdminComponent } from '@admin/admin.component';
+import { MentorComponent } from '@mentor/mentor.component';
+import { StudentsComponent } from '@students/students.component';
 
 export const routes: Routes = [
   {
@@ -9,7 +10,7 @@ export const routes: Routes = [
     component: AdminComponent,
   },
   {
-    path: 'student',
+    path: 'students',
     component: StudentsComponent,
   },
   {

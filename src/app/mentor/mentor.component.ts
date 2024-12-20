@@ -4,6 +4,5 @@ import { Component } from '@angular/core';
   selector: 'app-mentor',
   imports: [],
   templateUrl: './mentor.component.html',
-  styleUrl: './mentor.component.scss',
 })
 export class MentorComponent {}
