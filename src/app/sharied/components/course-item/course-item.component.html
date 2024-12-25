@@ -1,22 +1,40 @@
 <article
-  class="min-h-52 rounded border border-solid border-brzinc p-5 duration-150 hover:border-orange"
+  class="min-h-52 relative rounded border border-solid border-brzinc p-5 duration-150 hover:border-orange"
   data-aos="zoom-in"
   data-aos-duration="1000"
 >
-  <div class="inner mb-5">
-    <img
-      class="h-12 w-12 object-contain"
-      src="assets/svg/angular.svg"
-      alt="rasm"
-    />
+  @if (purchased) {
+  <div class="w-full absolute top-1 left-1">
+    <button
+      matTooltib="Kurs haqida batafsil ma'lumot sahifasiga o`ting"
+      class="rounded-full p-1 cursor-pointer hover:opacity-70 transition-all text-gray-700"
+    >
+      <mat-icon class="leading-none">info</mat-icon>
+    </button>
   </div>
+  }
+
+  <div class="inner mb-5 flex flex-col flex-nowrap items-center justify-start">
+    <img class="h-12 w-12 object-contain" [src]="item.imgSrc" alt="rasm" />
+    <h3 class="!m-0 line-clamp-1 font-bold text-gray-700">{{ item.name }}</h3>
+  </div>
+
   <div>
-    <h3 class="mb-5 line-clamp-1 font-bold text-gray-700">React.js testing</h3>
-    <p class="line-clamp-3 font-abel text-sm font-normal text-gray-700">
-      Egestas tellus nunc proin amet tellus tincidunt lacus consequat. Ultrices
-      Egestas tellus nunc proin amet tellus tincidunt lacus consequat.
-      UltricesEgestas tellus nunc proin amet tellus tincidunt lacus consequat.
-      Ultrices
+    <p
+      class="line-clamp-3 text-center font-abel text-sm font-normal text-gray-700 opacity-60"
+    >
+      {{ item.desc }}
     </p>
+
+    <div>
+      <span class="text-sm text-gray-300 italic">Mentor: </span>
+      <span class="italic">{{ item.mentorName }}</span>
+    </div>
+
+    <div class="mt-2 border-t pt-2 flex justify-end">
+      <button mat-flat-button [color]="purchased ? 'primary' : 'accent'">
+        {{ purchased ? "Continue" : "Join" }}
+      </button>
+    </div>
   </div>
 </article>

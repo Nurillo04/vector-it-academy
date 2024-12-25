@@ -1,4 +1,5 @@
-import { ILesson, ILink } from './i-lesson';
+import { ILesson } from './i-lesson';
+import { ILink } from './i-links';
 import { ITariff } from './i-tariff';
 
 export interface ICource {
@@ -6,7 +7,9 @@ export interface ICource {
   name: string;
   desc: string;
   mentorId: string;
-  links : ILink
+  mentorName: string;
+  imgSrc: string;
+  links: ILink[];
   tariffs: ITariff[];
-  lessons: ILesson[]; 
+  lessons: ILesson[];
 }
